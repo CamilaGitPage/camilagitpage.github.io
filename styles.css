@@ -50,7 +50,9 @@ body {
     color: var(--parchment);
     background-color: var(--cherry-blossom);
     transition: background-color 0.1s ease-out;
+    max-width: 600px;
     min-height: 100vh;
+    margin: 0 auto;
 
     font-family: 'Sibre', sans-serif;
     text-align: justify;
