@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Sibre';
+    src: url('fonts/sibre/Sibre-Regular.woff2') format('woff2'),
+        url('fonts/sibre/Sibre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sibre';
+    src: url('fonts/sibre/Sibre-Bold.woff2') format('woff2'),
+        url('fonts/sibre/Sibre-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sibre';
+    src: url('fonts/sibre/Sibre-Italic.woff2') format('woff2'),
+        url('fonts/sibre/Sibre-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Sibre';
+    src: url('fonts/sibre/Sibre-BoldItalic.woff2') format('woff2'),
+        url('fonts/sibre/Sibre-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+    --parchment: #fef9f5;
+    --misty-rose: #f9dad8;
+    --tea-rose: #f4c3c6;
+    --cherry-blossom: #e9abae;
+    --muted-raspberry: #d78289;
+    --old-rose: #c65c6a;
+    --ripe-cherries: #963542;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--parchment);
+    background-color: var(--cherry-blossom);
+    transition: background-color 0.1s ease-out;
+    min-height: 100vh;
+
+    font-family: 'Sibre', sans-serif;
+    text-align: justify;
+    line-height: 1.25;
+    padding: 32px 28px;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ripe-cherries);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 1.5s ease-in-out;
+}
+
+#story-view {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#message-view {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#message-input {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--misty-rose);
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--parchment);
+    font-family: 'Sibre', sans-serif;
+    font-size: 1.2rem;
+    resize: none;
+    outline: none;
+}
+
+#message-input::placeholder {
+    color: rgba(254, 249, 245, 0.6);
+}
+
+#message-input:focus {
+    border-color: var(--parchment);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.title {
+    font-family: 'Sibre', serif;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 1.25px;
+}
+
+.quote {
+    font-style: italic;
+    letter-spacing: 0.2px;
+}
+
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    align-self: flex-start;
+    cursor: pointer;
+
+    font: inherit;
+    font-weight: bold;
+    color: var(--ripe-cherries);
+    background-color: var(--misty-rose);
+}
